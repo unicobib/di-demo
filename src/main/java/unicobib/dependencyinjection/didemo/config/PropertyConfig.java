@@ -13,10 +13,10 @@ import unicobib.dependencyinjection.didemo.examplebeans.FakeJmsBroker;
 
 @Configuration
 //@PropertySource({"classpath:datasource.properties" , "classpath:jmsbroker.properties"})
-@PropertySources({
-        @PropertySource("classpath:datasource.properties"),
-        @PropertySource("classpath:jmsbroker.properties")
-})
+//@PropertySources({
+//        @PropertySource("classpath:datasource.properties"),
+//        @PropertySource("classpath:jmsbroker.properties")
+//})
 public class PropertyConfig {
     @Value("${unicobib.username}")
     String user;
@@ -32,12 +32,12 @@ public class PropertyConfig {
     String jmsUrl;
 
 
-    @Autowired
-    Environment env;
+//    @Autowired
+//    Environment env;
     @Bean
     public FakeDataSource fakeDataSource(){
         FakeDataSource fakeDataSource = new FakeDataSource();
-        fakeDataSource.setUserName(env.getProperty("USERNAME"));
+        fakeDataSource.setUserName(user);
         fakeDataSource.setPassWord(password);
         fakeDataSource.setUrl(url);
 
