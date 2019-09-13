@@ -1,0 +1,5 @@
+unicobib:
+  jms:
+    username: "jms yaml broker"
+    password: yml
+    url: someurl
